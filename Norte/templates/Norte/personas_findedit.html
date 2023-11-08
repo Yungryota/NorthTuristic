@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Estilos/crud.css' %}?v1">
+    <title>Editar Persona</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            text-align: center;
+            width: 1000px; /* Ajusta el valor según tus necesidades */
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+        }
+        .input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .input-container label {
+            margin-right: 10px;
+            ;
+        }
+        .input-container input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        h1 {
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Editar datos de persona</h1>
+
+        <form method="POST" action="{% url 'personas_findEdit' persona.pk %}">
+            {% csrf_token %}
+            <input type="hidden" name="pk" value="{{ persona.id }}">
+            <div class="input-container">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" value="{{ persona.nombre }}">
+            </div>
+            <div class="input-container">
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" value="{{ persona.apellido }}">
+            </div>
+            <div>
+                <label style="margin-right: 10px; margin-bottom: 100px;" for="edad">Edad:</label>
+                <input style="margin-bottom: 100px; padding: 10px;" type="number" name="edad" value="{{ persona.edad }}">
+            </div>
+            <div>
+                <input type="submit" value="Guardar cambios">
+            </div>
+        </form>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#mensaje").delay(2000).fadeOut("slow");
+            });
+        </script>
+    </div>
+</body>
+</html>

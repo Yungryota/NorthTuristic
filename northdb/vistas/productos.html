@@ -1,0 +1,52 @@
+{% extends 'padre/base.html' %} 
+{% load static %} 
+{% block titulo %} 
+Viajes 
+{%endblock titulo %}
+ {% block contenido %}
+
+<link rel="stylesheet" href="{% static 'css/Viajar.css' %}">
+<link rel="stylesheet" href="{% static 'css/cdn.jsdelivr.net_npm_sweetalert2@11.7.12_dist_sweetalert2.min.css' %}">
+<body>
+  <h1 class="text-center">VIAJES</h1>
+  <div class="container">
+      <div class="row justify-content-center">
+          {% for vi in viajes %}
+          <div class="col-md-4">
+              <div class="card mb-4" style="display: flex; flex-direction: column;">
+                  <img src="{{ vi.foto.url }}" class="card-img-top custom-image" alt="...">
+                  <div class="card-body" style="flex-grow: 1;">
+                      <h5 class="card-title">{{ vi.titulo }}</h5>
+                      <p class="card-text">{{ vi.descripcion }}</p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><p>Precio: CLP ${{ vi.precio }}.</p></li>
+                      <li class="list-group-item"><p>Duracion:{{ vi.duracion }}</p></li>
+                      <li class="list-group-item"><p>Personas: {{ vi.cantidad }} Max.</p></li>
+                  </ul>
+                  <div class="card-body">
+                      {% if user.is_authenticated %}
+                      <form method="POST" action="{% url 'vista_carrito' viaje_id=vi.id %}"
+                          style="display: flex; place-content: center">
+                          {% csrf_token %}
+                          <input type="submit" value="comprar y reservar" class="btn btn-dark" />
+                      </form>
+                      {% endif %}
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+  </div>
+</body>
+
+<style>
+  .custom-image {
+      width: 100%;
+      height: auto;
+  }
+</style>
+
+
+  <script src="https://kit.fontawesome.com/8ed5300e81.js" crossorigin="anonymous"></script>
+{% endblock contenido %}

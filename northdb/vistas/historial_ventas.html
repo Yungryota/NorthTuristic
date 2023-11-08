@@ -1,0 +1,42 @@
+{% extends 'padre/base.html' %}
+{% load static %}
+
+{% block titulo %}
+Historial
+{% endblock titulo %}
+
+{% block contenido %}
+<h1 class="text-bg-dark text-center">Historial de Ventas</h1>
+
+{% if ventas %}
+<div class="container">
+    <table class="table table-primary">
+        <thead class="table-light">
+            <tr>
+                <th>Fecha de Venta</th>
+            
+                <th>Viajes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for venta_info in ventas %}
+            <tr>
+                <td>{{ venta_info.venta.fecha_venta }}</td>
+                
+                <td>
+                    <ul>
+                        {% for viaje in venta_info.viajes %}
+                            <li>{{ viaje.titulo }} - ${{ viaje.precio }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p class="text-bg-dark text-center">No hay ventas registradas.</p>
+{% endif %}
+
+{% endblock contenido %}

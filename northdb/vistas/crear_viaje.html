@@ -1,0 +1,21 @@
+<!-- crear_viaje.html -->
+{% extends 'padre/base.html' %}
+{% load static %}
+
+{% block titulo %}
+Crear Viaje
+{% endblock titulo %}
+
+{% block contenido %}
+<h1 class="text-center">Crear Nuevo Viaje</h1>
+
+<div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+
+{% endblock contenido %}
+  

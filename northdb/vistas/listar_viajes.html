@@ -1,0 +1,55 @@
+{% extends 'padre/base.html' %}
+
+{% load static %}
+{% block titulo %}
+    Listado de Viajes
+{% endblock %}
+
+{% block contenido %}
+    <h1>Listado de Viajes</h1>
+
+    {% if viajes %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Ciudad</th>
+                    <th>Descripción</th>
+                    <th>Duración</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for viaje in viajes %}
+                    <tr>
+                        <td>{{ viaje.titulo }}</td>
+                        <td>{{ viaje.ciudad }}</td>
+                        <td>{{ viaje.descripcion }}</td>
+                        <td>{{ viaje.duracion }}</td>
+                        <td>${{ viaje.precio }}</td>
+                        <td>{{ viaje.cantidad }}</td>
+                        <td>
+                            <a href="{% url 'editar_viaje' viaje.id %}" class="btn btn-primary">Editar</a>
+                            <a href="{% url 'eliminar_viaje' viaje.id %}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% else %}
+        <p>No se encontraron viajes.</p>
+    {% endif %}
+    <a href="{% url 'crear_viaje' %}" class="btn btn-primary">Crear Viaje</a>
+{% endblock %}
+
+
+
+
+
+
+
+
+

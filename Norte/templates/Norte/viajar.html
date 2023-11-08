@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajar</title>
+    <link rel="stylesheet" href="{% static '/Estilos/Viajar.css' %}">
+    <link rel="stylesheet" href="{% static '/Estilos/cdn.jsdelivr.net_npm_sweetalert2@11.7.12_dist_sweetalert2.min.css' %}">
+    <link rel="stylesheet" href="{% static '/Estilos/footer.css' %}">
+
+    
+    
+</head>
+<body>
+    <!--INICIO NavBar-->
+    
+    <nav class="sticky-top">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <a href="#" class="enlace">
+            <h2 class="logo">NorthTuristicSite</h2>
+        </a>
+
+        <ul style="z-index: 1;">
+            <li><a class="active" href="{% url 'pprincipal'%}">Inicio</a></li>
+            <li><a href="{% url 'viajar'%}">Viajes</a></li>
+            <li><a href="{% url 'nosotros'%}">Nosotros</a></li>
+            <li><a href="{% url 'contacto'%}">Contactanos</a></li>
+            {% if user.is_authenticated%}
+            <li><a  href="{% url 'logout' %}">Cerrar sesión</a></li>
+            <li>
+                <a href="#">¡BIENVENIDO  {{ user.username }}!</a>
+            </li>
+            </script>
+            {% else %}
+            <li><a href="{% url 'login'%}">Login</a></li>
+            {% endif %}
+
+          
+        </ul>
+
+    </nav>
+    
+    <!--FIN NAVBAR-->
+
+    <!--Inicio de Cartas-->
+    <div class="My-wrapper">
+        <h1>VIAJES </h1>
+        <!--DIV CENTRAL -->
+        <div class="My-cols">
+                  <div class="col" ontouchstart="this.classList.toggle('hover');">
+                      <div class="container">
+                          <div class="front" style="background-image: url(static/imagenes/DesiertoFlorido.jpg)">
+                              <div class="inner">
+                                  <p>Desierto Florido</p>
+                    <span>Atacama</span>
+                              </div>
+                          </div>
+                          <div class="back">
+                              <div class="inner">
+                                <p>Invitación a conocer la magnífica zona del desierto más árido del mundo. Viaja con nosotros con una increíble promoción. Precio: CLP 500.000.</p>
+                                <button id="viaje" class="Boton-Viaje">VIAJAR</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col" ontouchstart="this.classList.toggle('hover');">
+                      <div class="container">
+                          <div class="front" style= "background-image:url(static/imagenes/la_portada.jpg) ;">
+                              <div class="inner">
+                                  <p>La Portada</p>
+                    <span>Antofagasta</span>
+                              </div>
+                          </div>
+                          <div class="back">
+                              <div class="inner">
+                                  <p>La Portada: monumento natural épico ubicado a 18 km al norte de Antofagasta. Precio: CLP 340.000.</p>
+                                    <button id="viaje2" class="Boton-Viaje">VIAJAR</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col" ontouchstart="this.classList.toggle('hover');">
+                      <div class="container">
+                          <div class="front" style="background-image: url(static/imagenes/mano-atacama.jpg)">
+                              <div class="inner">
+                                  <p>Mano del desierto</p>
+                    <span>Antofagasta</span>
+                              </div>
+                          </div>
+                          <div class="back">
+                              <div class="inner">
+                                  <p>La Mano del Desierto: escultura ubicada a 75 km al sur de Antofagasta, junto a la Ruta 5 Panamericana. Precio: CLP 620.000.
+                                  </p>
+                                  <button id="viaje3" class="Boton-Viaje">VIAJAR</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col" ontouchstart="this.classList.toggle('hover');">
+                      <div class="container">
+                          <div class="front" style="background-image: url(static/imagenes/OjosdelSalado.jpg)">
+                              <div class="inner">
+                                  <p>Ojos del Salado</p>
+                    <span>Cordillera de los Andes</span>
+                              </div>
+                          </div>
+                          <div class="back">
+                              <div class="inner">
+                                  <p>
+                                    Nevado Ojos del Salado: estratovolcán en la cordillera de los Andes, en el límite de Argentina y Chile. Precio: CLP 450.000.</p>
+                                <button id="viaje4" class="Boton-Viaje">VIAJAR</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col" ontouchstart="this.classList.toggle('');">
+                      <div class="container">
+                          <div class="front" style="background-image: url(static/imagenes/pan_azucar.jpg)">
+                              <div class="inner">
+                                  <p>Pan de Azucar</p>
+                    <span>Chañaral</span>
+                    
+                              </div>
+                          </div>
+                          <div class="back">
+                              <div class="inner">
+                                  <p>Parque Nacional Pan de Azúcar: ubicado 30 km al norte de Chañaral. Creado en 1985. Precio: CLP 600.000.</p>
+                                  <button id="viaje5" class="Boton-Viaje">VIAJAR</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col" ontouchstart="this.classList.toggle('Hover');">
+                      <div class="container">
+                          <div class="front" style="background-image: url(static/imagenes/llanosdechile.jpg);">
+                              <div class="inner">
+                                  <p>Llanos de Chile</p>
+                    <span>Atacama</span>
+                              </div>
+                          </div>
+                          <div class="back">
+                              <div class="inner">
+                                  <p>El Parque nacional Llanos de Challe es un área natural protegida en Chile, localizado en la costa de la III Región de Atacama.
+                                    Precio: CLP:250.000
+                                  </p>
+                                  <button id="viaje6" class="Boton-Viaje">VIAJAR</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col" ontouchstart="this.classList.toggle('hover');">
+                      <div class="container">
+                          <div class="front" style="background-image: url(static/imagenes/Catedral_de_Copiapo.jpg)">
+                              <div class="inner">
+                                  <p>Catedral de Copiapo</p>
+                    <span>Copiapó</span>
+                              </div>
+                          </div>
+                          <div class="back">
+                              <div class="inner">
+                                  <p>La catedral de Copiapó, conocida como iglesia de Nuestra Señora del Rosario, es la diocesana de Copiapó. Precio: CLP 260.000.
+                                  </p>
+                                  <button id="viaje7" class="Boton-Viaje">VIAJAR</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col" ontouchstart="this.classList.toggle('hover');">
+                      <div class="container">
+                          <div class="front" style="background-image: url(static/imagenes/MuseoCorbeta.jpg)">
+                              <div class="inner">
+                                  <p>Museo Corbeta Esmeralda</p>
+                    <span>Tarapacà</span>
+                              </div>
+                          </div>
+                          <div class="back">
+                              <div class="inner">
+                                  <p>Museo chileno en Iquique con réplica a escala real de la corbeta chilena Esmeralda. Precio: CLP: $$$.$$$.
+                                  </p>
+                                  <button id="viaje8" class="Boton-Viaje">VIAJAR</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="front" style="background-image: url(static/imagenes/Iquique.jpg)">
+                            <div class="inner">
+                                <p>Ciudad de Iquique</p>
+                  <span>Iquique</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Desde la década de 1830, Iquique fue un centro comercial clave para la venta del salitre de la región. Precio: CLP 480.000.
+                                </p>
+                                <button id="viaje9" class="Boton-Viaje">VIAJAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="front" style="background-image: url(static/imagenes/LagunaRoja.jpg)">
+                            <div class="inner">
+                                <p>Laguna Roja</p>
+                  <span>Arica</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Laguna de aguas calientes, también conocida como Mar Rojo por los habitantes locales. Descubierta en 2009. <br>Precio:CLP:500.000</p>
+                                <button id="viaje10" class="Boton-Viaje">VIAJAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="front" style="background-image: url(static/imagenes/puntaChoros.jpg)">
+                            <div class="inner">
+                                <p>Punta de Choros</p>
+                  <span>Coquimbo</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Playas y diversidad de fauna marina son los principales atractivos de este lugar. Precio: CLP: $$$.$$$.</p>
+                                <button id="viaje11" class="Boton-Viaje">VIAJAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="front" style="background-image: url(static/imagenes/ValleDelElqui.jpg)">
+                            <div class="inner">
+                                <p>Valle del Elqui</p>
+                  <span>Coquimbo</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Hermosos paisajes te esperan mientras avanzas por los caminos de este lugar. Precio: CLP: $$$.$$$.</p>
+                                <button id="viaje12" class="Boton-Viaje">VIAJAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+       </div>
+    <!--FIN CARTAS -->
+
+    <!--INICIO FOOTER-->
+     <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Nuestro objetivo es acercar el norte de Chile a tú dispositivo,
+                    con paquetes de viajes para que puedas conocer nuestro Norte.</p>
+                <p></p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2023 <b>NorthTuristicSite</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+
+
+  <!-- Footer End -->
+  <script src="{%static 'javaS/Compra.js'%}"></script>
+  <script src="{%static 'javaS/code.jquery.com_jquery-3.7.0.min.js'%}"></script>
+  <script src="{%static 'javaS/cdn.jsdelivr.net_npm_sweetalert2@11.7.12_dist_sweetalert2.all.min.js'%}"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/8ed5300e81.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/Estilos/nosotros.css' %}">
+   
+    <title>Document</title>
+</head>
+<body>
+    <!--INICIO NavBar-->
+    <header>
+      <nav class="sticky-top">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <a href="#" class="enlace">
+            <h2 class="logo">NorthTuristicSite</h2>
+        </a>
+
+        <ul style="z-index: 1;">
+          <li><a class="active" href="{% url 'pprincipal'%}">Inicio</a></li>
+          <li><a href="{% url 'viajar'%}">Viajes</a></li>
+          <li><a href="{% url 'nosotros'%}">Nosotros</a></li>
+          <li><a href="{% url 'contacto'%}">Contactanos</a></li>
+          {% if user.is_authenticated%}
+          <li><a  href="{% url 'logout' %}">Cerrar sesión</a></li>
+          <li>
+              <a href="#">¡BIENVENIDO  {{ user.username }}!</a>
+          </li>
+          </script>
+          {% else %}
+          <li><a href="{% url 'login'%}">Login</a></li>
+          {% endif %}
+
+        
+      </ul>
+
+    </nav>
+    </header>
+   
+
+<!--FIN NAVBAR-->
+
+<!--Inicio centro-->
+<div class="about-section">
+    <div class="inner-container">
+        <h1 class="about-heading">Nosotros</h1>
+        <p class="about-text">
+            <p>
+                Bienvenido/a a NorthTuristicSite, tu puerta de entrada al fascinante mundo del norte de Chile. Somos un equipo apasionado por compartir la belleza y la riqueza cultural de esta región única con viajeros aventureros como tú.
+              </p>
+              
+              <p>
+                Nuestro objetivo es acercar el norte de Chile a tu dispositivo, ofreciéndote paquetes de viajes cuidadosamente diseñados para que puedas experimentar lo mejor que esta región tiene para ofrecer. Desde los majestuosos paisajes del Desierto de Atacama hasta los imponentes observatorios astronómicos en las cumbres de los Andes, estamos aquí para hacer que tu viaje sea inolvidable.
+              </p>
+              
+              <p>
+                Con años de experiencia en la industria del turismo, hemos establecido alianzas estratégicas con los mejores proveedores locales, lo que nos permite brindarte servicios de alta calidad y una atención personalizada. Nuestro equipo de guías expertos estará a tu lado en cada paso del camino, compartiendo su conocimiento y pasión por el norte de Chile, asegurándose de que cada momento de tu viaje sea memorable.
+              </p>
+              
+              <p>
+                Nos enorgullece ofrecer una variedad de opciones para adaptarnos a tus preferencias y necesidades. Ya sea que estés buscando un viaje lleno de aventura y emoción, un retiro tranquilo en medio de la naturaleza o una inmersión en la cultura y la historia de la región, tenemos el itinerario perfecto para ti. Además, nos encargamos de todos los detalles logísticos para que puedas relajarte y disfrutar plenamente de tu experiencia.
+              </p>
+              
+              <p>
+                En NorthTuristicSite, valoramos el turismo responsable y sostenible. Trabajamos en estrecha colaboración con las comunidades locales, respetando sus tradiciones y preservando el entorno natural que tanto amamos. Creemos en dejar una huella positiva en cada destino que visitamos, fomentando el intercambio cultural y contribuyendo al desarrollo sostenible de las comunidades locales.
+              </p>
+              
+              <p>
+                Si estás listo/a para embarcarte en una aventura única en el norte de Chile, estás en el lugar correcto. Permítenos mostrarte los tesoros ocultos de esta región asombrosa y dejarnos encargarnos de cada detalle de tu viaje. ¡Prepárate para vivir momentos inolvidables y descubrir la magia del norte de Chile con NorthTuristicSite!
+              </p>
+              
+        </p>
+       
+    </div>
+</div>
+<!--Fin centro-->
+<br>
+<br><br><br><br><br><br>
+<!--inicio footer-->
+<!--INICIO FOOTER-->
+
+
+
+<!-- Footer End -->
+<!--fin footer-->
+</body>
+</html>

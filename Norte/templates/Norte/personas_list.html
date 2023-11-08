@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Estilos/crud.css' %} ?=v1">
+    <title>Editar Persona</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            text-align: center;
+            width: 1000px; /* Ajusta el valor según tus necesidades */
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+        }
+        .container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .container th, .container td {
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+        .container th {
+            background-color: #f8f8f8;
+            font-weight: bold;
+        }
+        .container td {
+            background-color: #ffffff;
+        }
+        h1 {
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Editar datos personas</h1>
+        <br>
+        <br>
+
+        <button type="button">
+            <a href="{% url 'personasAdd' %}">Agregar</a>
+        </button>
+
+        <div id="mensaje">
+            {% if mensaje %}
+                {{ mensaje }}
+            {% endif %}
+        </div>
+
+        <table>
+            {% if personas %}
+                <tr>
+                    <th>run</th>
+                    <th>nombre</th>
+                    <th>apellido</th>
+                    <th>contraseña</th>
+                    <th>edad</th>
+                    <th>Eliminar</th>
+                    <th>Modificar</th>
+                </tr>
+                {% for x in personas %}
+                    <tr>
+                        <td>{{ x.run }}</td>
+                        <td>{{ x.nombre }}</td>
+                        <td>{{ x.apellido }}</td>
+                        <td>{{ x.password }}</td>
+                        <td>{{ x.edad }}</td>
+                        <td><a href="{% url 'personas_del' pk=x.run %}">Eliminar</a></td>
+                        <td><a href="{% url 'personas_findEdit' pk=x.run %}">Modificar</a></td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </table>    
+    </div>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#mensaje").delay(2000).fadeOut("slow");
+        });
+    </script>
+</body>
+</html>

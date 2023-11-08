@@ -1,0 +1,37 @@
+{% extends 'padre/base.html' %}
+{% load static %}
+
+{% block titulo %}
+Comprobante
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="text-bg-dark container text-center">
+  <h1 style="color: white;">Comprobante de Venta</h1>
+
+  <h2 style="color: white (63, 61, 161);">Detalles de la Venta</h2>
+  <p class="" style="display: flex; flex-wrap: wrap; justify-content: center;"><strong>ID de Venta:</strong> {{ carrito.id }}</p>
+  <h4 style="color: rgb(75, 106, 173);"><strong>Total de la Venta:</strong> ${{ total }}</h4>
+
+  <h2 style="color: rgb(61, 59, 151);">Productos Adquiridos</h2>
+  <table  class="container col-3 table table-danger text-bg-dark">
+    <thead class="table-light">
+      <tr>
+        <th >Producto</th>
+        <th>Paquete</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      <tr>
+        <td>{{ item.viaje.titulo }}</td>
+       
+        <td>${{ item.viaje.precio }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'pagar_total' %}" class="btn btn-success">Pagar</a>
+</div>
+{% endblock contenido %}

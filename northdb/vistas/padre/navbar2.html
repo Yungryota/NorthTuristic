@@ -1,0 +1,51 @@
+<style>
+    .logo {
+        margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+    }
+</style>
+<nav class="sticky-top">
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fa-solid fa-bars"></i>
+    </label>
+    <div>
+    <a href="#" class="enlace">
+        <h2 class="logo">NorthTuristicSite</h2>
+    </a>
+
+    <ul style="z-index: 1;">
+        <li></li>
+        <li><a class="" href="{% url 'principal' %}">Inicio</a></li>
+        <li><a href="{% url 'mostrar_viajes' %}">Viajes</a></li>
+        <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+        <li><a href="{% url 'contactanos' %}">Contactanos</a></li>
+        {% if user.is_authenticated == True %}
+             <li><a href="{% url 'ver_carrito'  %}">
+               <i class="fas fa-cart-shopping"></i></i>
+               <span class="nav-item">Carrito</span>
+             </a></li>
+             <li><a href="{% url 'historial_ventas'  %}">
+               <i class="fas fa-clock-rotate-left"></i></i>
+               <span class="nav-item">Compras</span>
+             </a></li>
+             {% endif %}
+             {% if user.username == "milladmin" %}
+        <li><a href="{% url 'listar_viajes'%}">Admin</a></li>
+        
+        {% endif %}
+        {% if user.is_authenticated%}
+        <li><a  href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></li>
+        <li>
+            <a href="#">¡BIENVENIDO  {{ user.username }}!</a>
+        </li>
+        </script>
+        {% else %}
+        
+        <li><a href="{% url 'entrar' %}">Login</a></li>
+        <li><a href="{% url 'registro' %}">Registrarse</a></li>
+        {% endif %}
+
+      
+    </ul>
+</div>
+</nav>  

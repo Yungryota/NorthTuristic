@@ -1,0 +1,50 @@
+{% extends 'padre/base.html' %}
+{% load static %}
+
+{% block titulo %}
+Contactanos
+{% endblock titulo %}
+
+{% block contenido %}
+
+<link rel="stylesheet" href="{% static 'css/contacto.css' %}">
+
+<div class="centro">
+  <div class="row">
+    <div class="col" id="iz">
+      <h1 id="contacto-tarjeta">
+        Contáctanos
+      </h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <p>Háblanos por WhatsApp</p>
+                <div class="btnredes">
+                  <a href="#" class="btn btn-primary whatsapp">WhatsApp</a>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <p>Mira nuestras publicaciones por</p>
+                <div class="btnredes">
+                  <a href="#" class="btn btn-primary facebook">Facebook</a>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <p>Síguenos por</p>
+                <div class="btnredes">
+                  <a href="#" class="btn btn-primary instagram">Instagram</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock contenido %}
+

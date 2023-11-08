@@ -1,0 +1,186 @@
+{% extends 'padre/base.html' %}
+{% load static %}
+{% block titulo %}
+Inicio
+{% endblock titulo %}
+{% block css %}
+<style>
+  .text-justify {
+    text-align: justify;
+}
+</style>
+{% endblock css %}
+{% block contenido %}
+<body>
+  <div id="carouselExampleIndicators" class="carousel slide" style="z-index: 1;">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+
+        <div class="carousel-item active d-item">
+            <img src="{% static 'img/iglesia_de_cariquima.jpg'%}" class="d-block w-100 d-img" alt="Slide 1">
+            <div class="carousel-caption top-0 mt-4">
+                <p class="mt-5 fs-1 tex-uppercase">
+                    DESCUBRE
+                </p>
+                <h1 class="display-1 fw-bolder tex-capitalize">"La iglesia de cariquima"</h1>
+                <button type="submit" class="btn btn-primary px-4 py-2 fs-5 mt-5">Viajar</button>
+            </div>
+        </div>
+
+        <div class="carousel-item  d-item">
+            <img src="{% static 'img/la_portada.jpg'%}" class="d-block w-100 d-img" alt="Slide 1" >
+            <div class="carousel-caption top-0 mt-4">
+                <p class="mt-5 fs-1 tex-uppercase">
+                    DESCUBRE
+                </p>
+                <h1 class="display-1 fw-bolder tex-capitalize">"La portada"</h1>
+                <button type="submit" class="btn btn-primary px-4 py-2 fs-5 mt-5">Viajar</button>
+            </div>
+        </div>
+
+        <div class="carousel-item  d-item">
+            <img src="{% static 'img/mano-atacama.jpg'%}" class="d-block w-100 d-img" alt="Slide 1">
+            <div class="carousel-caption top-0 mt-4">
+                <p class="mt-5 fs-1 tex-uppercase">
+                    DESCUBRE
+                </p>
+                <h1 class="display-1 fw-bolder tex-capitalize">"La mano del desierto"</h1>
+                <button type="submit" class="btn btn-primary px-4 py-2 fs-5 mt-5">Viajar</button>
+            </div>
+        </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="textoHead">
+    <div >
+        <div>
+            <h2 class="tittle">
+                ¡Mas opciones de VIAJES!
+            </h2>
+        </div>
+    </div>
+</div>
+
+
+
+<!--FINCARROUSEL-->
+
+<!--CARD-->
+<div class="container">
+    <div class="uk-margin"></div>
+    <div class="uk-section">
+        <div class="owl-carousel owl-theme">
+
+            <div class="item" >
+                <div class=" uk-card uk-card-primary uk-card-hover uk-card-body uk-light">
+                <h3 style="font-size: 25px;">La Portada</h3>
+                <br>
+                <img src="{% static 'img/la_portada.jpg'%}" class="d-img2" >
+                    <h3 style=" font-size: 18px;">El Monumento Nacional La Portada es una formación rocosa ubicada
+                en Chile, reconocida por su impresionante arco natural esculpido por la erosión del viento y el
+                mar. </h3>
+            </div>
+
+        </div>
+
+        <div class="item" >
+                <div class=" uk-card uk-card-primary uk-card-hover uk-card-body uk-light">
+            <h3 style="font-size: 25px;">La mano del desierto</h3>
+            <img src="{% static 'img/mano-atacama.jpg'%}" class=" d-img2">
+            <h3 style="font-size: 18px;">La Mano del Desierto es una icónica escultura en Chile,
+                representando una mano gigante emergiendo del suelo árido, simbolizando la fuerza y
+                fragilidad de la naturaleza.</h3>
+        </div>
+
+    </div>
+    <div class="item">
+        <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-light">
+            <h3 style="font-size: 25px;">Iglesia de cariquima</h3>
+            <img src="{% static 'img/iglesia_de_cariquima.jpg'%}" class="d-img2">
+            <h3 style="font-size: 18px;">La Iglesia de Cariquima es un antiguo templo ubicado en Chile,
+                reconocido por su arquitectura colonial y su valor histórico como un símbolo de la fe en la
+                región.</h3>
+        </div>
+
+    </div>
+    <div class="item">
+        <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-light">
+            <h3 style="font-size: 25px;">Desierto Florido</h3>
+            <img src="{% static 'img/desierto_Florido.jpg'%}" class="d-img2">
+            <h3 style="font-size: 18px;">El Desierto Florido es un fenómeno natural en Chile, donde el
+                desierto de Atacama se cubre de flores coloridas y vibrantes tras lluvias excepcionales,
+                creando un paisaje sorprendente y hermoso.</h3>
+        </div>
+
+
+    </div>
+    <div class="item">
+        <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-light">
+            <h3 style="font-size: 25px;">Geisers el Tatio</h3>
+            <img src="{% static 'img/tatio.jpg'%}" class="d-img2">
+            <h3 style="font-size: 18px;">El Tatio es un campo geotérmico en Chile con géiseres, aguas
+                termales y chorros de vapor que crean un impresionante espectáculo natural en medio de los
+                Andes.</h3>
+        </div>
+
+    </div>
+    <div class="item">
+        <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-light">
+            <h3 style="font-size: 25px;">Salar de Atacama</h3>
+            <img src="{% static 'img/Salar_de_Atacama.jpg'%}" class="d-img2">
+            <h3 style="font-size: 18px;">El Salar de Atacama, situado en Chile, es un impresionante desierto
+                de sal con paisajes cautivadores y valiosos depósitos minerales, reconocido por su
+                singularidad y atracción turística.</h3>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+</div>
+
+
+
+<div class="textoMid">
+    <div >
+        <div>
+            <h2 class="tittle">
+                Te damos la bienvenida a un sitio más simple y más rápido
+            </h2>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h2  class="descripcion">Porque queremos que tu experiencia con NorthTuristicSite sea más ágil y sencilla, te presentamos nuestro nuevo sitio, con diseño renovado y nuevas funcionalidades.</h1>
+        </div>
+    </div>
+    <div>
+        <img src="{% static 'img/feli.jpg'%}" class="img-mid" style="border-radius: 90px;">
+
+        <h2 class="tittle">Registrate aqui</h2>
+        <button type="submit" class="btn2 btn-primary px-4 py-2 fs-5 mt-5"><a href="{% url 'registro'%}" style="text-decoration: none; color: aliceblue;">Registrate</a></button>
+        <br>
+        <br>
+    </div>
+</div>
+</body>
+{% endblock contenido %}

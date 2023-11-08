@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+{% load static%}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>¡BIENVENIDO!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container" style="box-shadow: 5px, 5px, ;">
+        <br>
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>¡Bienvenido a NorthTuristicSite!</h2>
+                        <hr>
+                        <form  method="post"  style="justify-content: center; text-align: left; padding: 10px  20px;">
+                            {% csrf_token %}
+                            <br>
+                            {{ form }}
+                            <br>
+                            <br>
+                            <input type="submit" value="Ingresar" class="btn btn-success float-right" style="margin-right: 250px;">
+                            <a href="{% url 'pprincipal' %}" style="font-size: 20px; margin-right: 5px;">Ir al home</a> |
+                            <a href="{% url 'registro' %}" style="font-size: 20px;" >Registrate</a> 
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://kit.fontawesome.com/8ed5300e81.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

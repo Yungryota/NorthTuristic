@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*NAVBAR*/
+nav {
+    background-color: #2A0087;
+    height: 80px;
+    width: 100%;
+    text-decoration: none;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+    text-decoration: none;
+    margin-top: auto;
+    z-index: 2;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 10px;
+    text-decoration: none;
+
+}
+
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.enlace {
+    position: absolute;
+    padding: 20px 50px;
+    text-decoration: none;
+}
+
+.logo {
+    height: 40px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-decoration: none;
+    list-style: none;
+}
+
+li a.active,
+li a:hover {
+    background: rgb(127, 82, 168);
+    transition: .5s;
+    color: #FFFF;
+}
+
+/*Todo de la navbar arriba*/
+/*TELEFONO*/
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+
+    .enlace {
+        position: absolute;
+        padding: 20px 30px;
+        text-decoration: none;
+    }
+
+
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2A0087;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        text-decoration: none;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0px;
+        line-height: 30px;
+
+    }
+
+    nav ul li a {
+        font-size: 20px;
+
+    }
+
+    li a:hover,
+    li a.active {
+        background: none;
+        color: red;
+
+    }
+
+    /*aparece*/
+    #check:checked~ul {
+        left: 0;
+    }
+
+
+}
+
+/*TABLETA*/
+@media (max-width: 952px) {
+    .enlace {
+        padding-left: 20px;
+    }
+
+    /*LETRA*/
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+
+/*FOOTER*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+
+
+/*:::::Pie de Pagina*/
+.pie-pagina {
+    width: 100%;
+    background-color: #0a141d;
+}
+
+.pie-pagina .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img {
+    width: 250px;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p {
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.pie-pagina .grupo-1 .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #0d2033;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover {
+    color: aqua;
+}
+
+.pie-pagina .grupo-2 {
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+}
+
+@media screen and (max-width:800px) {
+    .pie-pagina .grupo-1 {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}
+
+
+/* Ajuste de altura del footer */
+.pie-pagina {
+     /* Establece la altura mínima del footer como el 100% del viewport height */
+  display: flex; /* Utiliza flexbox para alinear verticalmente el contenido */
+  flex-direction: column; /* Alinea el contenido en columnas */
+}
+
+/* Estilo para el primer grupo de elementos */
+.grupo-1 {
+  flex-grow: 0; /* Permite que el primer grupo de elementos crezca para llenar el espacio disponible */
+}
+
+/* Estilo para el segundo grupo de elementos */
+.grupo-2 {
+  margin-top: 10px; /* Empuja el segundo grupo de elementos hacia abajo para que se alinee en la parte inferior */
+}
+
+.centro{
+    align-items: center;
+    text-align: center;
+    margin: 20%;
+    padding: 10px;
+}
+
+.row{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#iz{
+    background-size: cover;
+    background-color: #445b8b;
+    text-align: center;
+    text-emphasis-color: white;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    margin-bottom: 10px;
+
+}
+
+#contacto-tarjeta{
+    font-style: italic;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.btnredes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .whatsapp {
+    background-color: green;
+    background-image: url("ruta/al/icono/whatsapp.png");
+  }
+  
+  .facebook {
+    background-color: blue;
+    background-image: url("ruta/al/icono/facebook.png");
+  }
+  
+  .instagram {
+    background-color: rgb(216, 112, 211);
+    background-image: url("ruta/al/icono/instagram.png");
+  }
+body{
+    margin: auto;
+    padding: auto;
+    width: auto;
+    height: auto;
+}
+.p{
+    font-family: 'Open Sans', sans-serif;
+}
