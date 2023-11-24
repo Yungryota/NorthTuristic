@@ -9,8 +9,8 @@
         <i class="fa-solid fa-bars"></i>
     </label>
     <div>
-    <a href="#" class="enlace">
-        <h2 class="logo">NorthTuristicSite</h2>
+    <a href="" class="enlace">
+        <h2  style="color: aliceblue;">NorthTuristicSite</h2>
     </a>
 
     <ul style="z-index: 1;">
@@ -19,6 +19,7 @@
         <li><a href="{% url 'mostrar_viajes' %}">Viajes</a></li>
         <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
         <li><a href="{% url 'contactanos' %}">Contactanos</a></li>
+
         {% if user.is_authenticated == True %}
              <li><a href="{% url 'ver_carrito'  %}">
                <i class="fas fa-cart-shopping"></i></i>
@@ -43,6 +44,7 @@
         
         <li><a href="{% url 'entrar' %}">Login</a></li>
         <li><a href="{% url 'registro' %}">Registrarse</a></li>
+        <li><a href="{% url 'entrar' %}">ADMIN</a></li>
         {% endif %}
 
       
