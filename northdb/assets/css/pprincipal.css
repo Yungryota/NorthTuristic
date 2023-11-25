@@ -16,7 +16,6 @@ nav {
 
 nav ul {
     float: right;
-    margin-right: 20px;
     text-decoration: none;
     margin-top: auto;
     z-index: 2;
@@ -38,7 +37,6 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 nav ul li a {
     color: rgb(255, 255, 255);
     font-size: 18px;
-    padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
     text-decoration: none;
